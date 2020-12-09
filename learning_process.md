@@ -20,3 +20,6 @@
 - `JSX`
 
 3. ## Displaying static data
+
+- React.Component<P, S>
+- 😯 this.state must be initialized

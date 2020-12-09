@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-interface DataScheme {
+export interface DataScheme {
   when: string;
   who: string;
   description: string;
