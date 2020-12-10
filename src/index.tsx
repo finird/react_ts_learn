@@ -22,13 +22,19 @@ const data: DataScheme[] = [
   },
 ];
 
+const headings = Object.keys(data[0]);
+
 ReactDOM.render(
   <div>
     {React.createElement(BasicComponent)}
     <br />
     <StaticDataComponent />
     <br />
-    <PassingDataComponent title='Passing data' data={data} />
+    <PassingDataComponent
+      headings={headings}
+      title='Passing data'
+      data={data}
+    />
   </div>,
   document.body
 );
