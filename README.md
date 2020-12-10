@@ -32,4 +32,11 @@
 - Self closing tag: `<... />`
 - Multiple Components
   - It makes Components clearly and reusable
-- Namespaced components
+- 👏 Namespaced components
+  - With JS:
+    - `Parent.Child1`
+    - `Parent.Child2`
+  - With TS:
+    - ```javascript
+      export default Object.assign(Parent, { Child1, Child2 });
+      ```

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BasicComponent } from './basics/2-first-component';
 import { DataScheme, StaticDataComponent } from './basics/3-display-data';
 import { PassingDataComponent } from './basics/4-passing-data';
+import NamespacedComponent from './basics/5-namespaced-components';
 
 const data: DataScheme[] = [
   {
@@ -22,7 +23,7 @@ const data: DataScheme[] = [
   },
 ];
 
-const headings = Object.keys(data[0]);
+let headings = Object.keys(data[0]);
 
 ReactDOM.render(
   <div>
@@ -35,6 +36,10 @@ ReactDOM.render(
       title='Passing data'
       data={data}
     />
+    <NamespacedComponent />
+    <table>
+      <NamespacedComponent.Headings headings={headings} />
+    </table>
   </div>,
   document.body
 );
