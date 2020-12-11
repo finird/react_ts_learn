@@ -46,7 +46,11 @@ const RecentChangesTable: React.FunctionComponent = ({ children }) => (
 const Headings: React.FunctionComponent<{ headings: string[] }> = ({
   headings,
 }) => {
-  const transpliesComponent = headings.map((h) => <Heading heading={h} />);
+  const transpliesComponent = headings.map((h, i) => (
+    <Heading heading={h} key={i} />
+  ));
+  console.log(transpliesComponent);
+
   return (
     <thead className='tableHeading'>
       <tr>{transpliesComponent}</tr>
@@ -54,13 +58,17 @@ const Headings: React.FunctionComponent<{ headings: string[] }> = ({
   );
 };
 
-const Heading = ({ heading }: { heading: string }) => (
-  <th>{heading.toUpperCase()}</th>
-);
+const Heading = ({
+  heading,
+  key,
+}: {
+  heading: string;
+  key?: number | string;
+}) => <th key={key}>{heading.toUpperCase()}</th>;
 
 class Body extends React.Component<{ changesSetList: DataScheme[] }> {
-  transpliesComponent = this.props.changesSetList.map((set) => (
-    <Row changesSet={set} />
+  transpliesComponent = this.props.changesSetList.map((set, idx) => (
+    <Row changesSet={set} key={idx} />
   ));
 
   render() {
@@ -68,10 +76,13 @@ class Body extends React.Component<{ changesSetList: DataScheme[] }> {
   }
 }
 
-class Row extends React.Component<{ changesSet: DataScheme }> {
+class Row extends React.Component<{
+  changesSet: DataScheme;
+  key?: number | string;
+}> {
   render() {
     return (
-      <tr>
+      <tr key={this.props.key}>
         <td>{this.props.changesSet.when}</td>
         <td>{this.props.changesSet.who}</td>
         <td>{this.props.changesSet.description}</td>
