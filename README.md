@@ -85,3 +85,4 @@
 | From         | Passed from parent | Its owned properties                                   |
 | Can changes? | can not            | 1. Can changes overtime                                |
 |              |                    | 2. Changes in state affect the rendering of components |
+|              |                    | 3. Changes make effect at next ui frame                |
