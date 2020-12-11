@@ -53,3 +53,23 @@
   - 👍 **_In React, an owner component set props to another components._**
   - 👉 A component shouldn't mutable its props.
     - 👏 If parent's props changes, React will make sure the changes are flown downstream and will re-render the component tree.
+
+### Props Validation
+
+- **PropTypes** or **ReactPropTypes** by Typescript
+
+  - 👉 Typescript is strong typed itself, but we can also specific prop's types to make JS has fully type annotation supported.
+
+- Specific default props
+
+  - By JS, you can specific default props via `getDefaultProps()` method
+
+  - By TS, you needn't it, TS has object default value as:
+
+    ```typescript
+    { title = "Title"}: {title: string}
+    ```
+
+### Modifying `this.props.children`
+
+- You can use `this.props.children` as any props, injectable, reusable, etc...

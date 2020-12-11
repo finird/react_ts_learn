@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, ReactPropTypes } from 'react';
 import './5-namespaced-components.css';
 export interface DataScheme {
   when: string;
