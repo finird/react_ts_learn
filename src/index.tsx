@@ -25,6 +25,9 @@ const data: DataScheme[] = [
 
 let headings = Object.keys(data[0]);
 
+const title = 'Spread attrs';
+let props = { headings, data, title };
+
 ReactDOM.render(
   <div>
     {React.createElement(BasicComponent)}
@@ -39,6 +42,11 @@ ReactDOM.render(
     <NamespacedComponent />
     <table>
       <NamespacedComponent.Headings headings={headings} />
+    </table>
+
+    {/* Spread */}
+    <table>
+      <PassingDataComponent {...props} />
     </table>
   </div>,
   document.body
