@@ -40,3 +40,7 @@
     - ```javascript
       export default Object.assign(Parent, { Child1, Child2 });
       ```
+- Spread attributes
+- Styling for component
+- Conditional not available in JSX
+- Non-DOM attributes

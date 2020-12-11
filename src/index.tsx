@@ -39,7 +39,9 @@ ReactDOM.render(
       title='Passing data'
       data={data}
     />
+    {/* Styling for Component */}
     <NamespacedComponent />
+
     <table>
       <NamespacedComponent.Headings headings={headings} />
     </table>

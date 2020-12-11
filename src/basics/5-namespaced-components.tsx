@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { CSSProperties } from 'react';
+import './5-namespaced-components.css';
 export interface DataScheme {
   when: string;
   who: string;
@@ -38,7 +38,9 @@ const NamespacedComponent = function () {
 };
 
 const RecentChangesTable: React.FunctionComponent = ({ children }) => (
-  <table>{children}</table>
+  <table cellPadding={'4px'} className='table'>
+    {children}
+  </table>
 );
 
 const Headings: React.FunctionComponent<{ headings: string[] }> = ({
@@ -46,7 +48,7 @@ const Headings: React.FunctionComponent<{ headings: string[] }> = ({
 }) => {
   const transpliesComponent = headings.map((h) => <Heading heading={h} />);
   return (
-    <thead>
+    <thead className='tableHeading'>
       <tr>{transpliesComponent}</tr>
     </thead>
   );
@@ -62,7 +64,7 @@ class Body extends React.Component<{ changesSetList: DataScheme[] }> {
   ));
 
   render() {
-    return <tbody>{this.transpliesComponent}</tbody>;
+    return <tbody className='tableBody'>{this.transpliesComponent}</tbody>;
   }
 }
 
