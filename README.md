@@ -73,3 +73,15 @@
 ### Modifying `this.props.children`
 
 - You can use `this.props.children` as any props, injectable, reusable, etc...
+
+## State
+
+> This is an importance concept so that I split it into a bigger section
+
+### Props vs State
+
+| Cases        | Props              | State                                                  |
+| :----------- | :----------------- | :----------------------------------------------------- |
+| From         | Passed from parent | Its owned properties                                   |
+| Can changes? | can not            | 1. Can changes overtime                                |
+|              |                    | 2. Changes in state affect the rendering of components |
