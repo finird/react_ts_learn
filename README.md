@@ -86,3 +86,28 @@
 | Can changes? | can not            | 1. Can changes overtime                                |
 |              |                    | 2. Changes in state affect the rendering of components |
 |              |                    | 3. Changes make effect at next ui frame                |
+
+### Setting initial state
+
+- Javascript: `getInitialState()` method.
+- Typescript:
+
+  ```typescript
+  type MyState = { count: number };
+  class App extends React.Component<{}, MyState> {
+    state: MyState = { count: 0 };
+    render() {
+      // this.setState(() => {})
+      // this.state.count
+    }
+  }
+  ```
+
+- 👏 **Typscript** `React.Component<P,S>` makes P and S are immutable
+  - 👉 Needn't specific `readonly` anymore.
+
+### `setState()` method
+
+### Avoid state
+
+- You must avoid using `state` as much as possible.
