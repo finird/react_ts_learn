@@ -44,3 +44,12 @@
 - Styling for component
 - Conditional not available in JSX
 - Non-DOM attributes
+
+## Dataflow and life cycle
+
+### Dataflow
+
+- By default, there is only one direction: from parent to child
+  - 👍 **_In React, an owner component set props to another components._**
+  - 👉 A component shouldn't mutable its props.
+    - 👏 If parent's props changes, React will make sure the changes are flown downstream and will re-render the component tree.
